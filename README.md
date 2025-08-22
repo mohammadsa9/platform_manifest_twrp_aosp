@@ -53,11 +53,11 @@ with [Git and Repo](https://source.android.com/source/using-repo.html).
 
 To initialize your local repository using the AOSP trees to build TWRP, use a command like this:
 
-    repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
+    repo init -u https://github.com/mohammadsa9/platform_manifest_twrp_aosp.git -b twrp-11
 
 To initialize a shallow clone, which will save even more space, use a command like this:
 
-    repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
+    repo init --depth=1 -u https://github.com/mohammadsa9/platform_manifest_twrp_aosp.git -b twrp-11
 
 Then to sync up:
 
@@ -72,3 +72,8 @@ Then to build for a device with recovery partition:
 Then to build for a device without recovery partition:
 
      cd <source-dir>; export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch twrp_<device>-eng; mka bootimage
+
+## Notes ##
+---------------
+
+This manifest includes a patched system/core to restore legacy adbd USB implementation for devices with older kernels (<3.18).
